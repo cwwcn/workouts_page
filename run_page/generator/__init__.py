@@ -66,7 +66,6 @@ class Generator:
         filters = {"before": datetime.datetime.utcnow()}
 
     for activity in self.client.get_activities(**filters):
-      time.sleep(0.5)
       if self.only_run and activity.type != "Run":
         continue
       if IGNORE_BEFORE_SAVING:

@@ -173,14 +173,12 @@ def update_or_create_activity(session, run_activity):
           location_country = reverse_geocode_gaode(
             start_point.lat, start_point.lon
           )
-          print(f"{run_activity.id}: 1正在使用高德地图解析: {start_point.lat}, {start_point.lon}, 结果是: {location_country}")
         # limit (only for the first time)
         except Exception:
           try:
             location_country = reverse_geocode_gaode(
               start_point.lat, start_point.lon
             )
-            print(f"{run_activity.run_id}: 2正在使用高德地图解析: {start_point.lat}, {start_point.lon}, 结果是: {location_country}")
           except Exception as e:
             print(f"高德地图解析失败: {e}")
             pass
