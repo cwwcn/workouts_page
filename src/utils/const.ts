@@ -35,7 +35,7 @@ const USE_DASH_LINE = false;
 // styling: route line opacity: [0, 1]
 const LINE_OPACITY = 0.8;
 // styling: map height
-const MAP_HEIGHT = 686;
+const MAP_HEIGHT = 626;
 //set to `false` if you want to hide the road label characters
 const ROAD_LABEL_DISPLAY = true;
 // update for now 2024/11/17 the privacy mode is true
@@ -92,10 +92,10 @@ const TOTAL_DISTANCE_TITLE = IS_CHINESE ? '总距离' : 'Total Distance';
 const TOTAL_ELEVATION_GAIN_TITLE = IS_CHINESE
   ? '总海拔爬升'
   : 'Total Elevation Gain';
-const YEARLY_TITLE = IS_CHINESE ? 'Year' : 'Yearly';
-const MONTHLY_TITLE = IS_CHINESE ? 'Month' : 'Monthly';
-const WEEKLY_TITLE = IS_CHINESE ? 'Week' : 'Weekly';
-const DAILY_TITLE = IS_CHINESE ? 'Day' : 'Daily';
+const YEARLY_TITLE = IS_CHINESE ? '按年' : 'Yearly';
+const MONTHLY_TITLE = IS_CHINESE ? '按月' : 'Monthly';
+const WEEKLY_TITLE = IS_CHINESE ? '按周' : 'Weekly';
+const DAILY_TITLE = IS_CHINESE ? '按日' : 'Daily';
 const LOCATION_TITLE = IS_CHINESE ? 'Location' : 'Location';
 
 const RUN_TITLES = {
@@ -103,7 +103,6 @@ const RUN_TITLES = {
   HALF_MARATHON_RUN_TITLE,
   RUN_TITLE,
   TRAIL_RUN_TITLE,
-
   SWIM_TITLE,
   RIDE_TITLE,
   INDOOR_RIDE_TITLE,
@@ -120,7 +119,7 @@ const RUN_TITLES = {
 
 const TYPES_MAPPING = {
   run: RUN_TITLES.RUN_TITLE,
-  'trail run': RUN_TITLES.TRAIL_RUN_TITLE,
+  'Trail Run': RUN_TITLES.TRAIL_RUN_TITLE,
   swim: RUN_TITLES.SWIM_TITLE,
   ride: RUN_TITLES.RIDE_TITLE,
   virtualride: RUN_TITLES.VIRTUAL_RIDE_TITLE,
@@ -193,14 +192,14 @@ export const RIDE_COLOR = green;
 export const VIRTUAL_RIDE_COLOR = veryPeri;
 export const HIKE_COLOR = pink;
 export const SWIM_COLOR = gold;
-export const ROWING_COLOR = cyan;
+export const ROWING_COLOR = IKB;
 export const ROAD_TRIP_COLOR = purple;
 export const FLIGHT_COLOR = dark_vanilla;
 export const PROVINCE_FILL_COLOR = '#47b8e0';
 export const COUNTRY_FILL_COLOR = dark_vanilla;
 export const KAYAKING_COLOR = red;
 export const SNOWBOARD_COLOR = dark_vanilla;
-export const TRAIL_RUN_COLOR = IKB;
+export const TRAIL_RUN_COLOR = cyan;
 
 // map tiles vendor, maptiler or mapbox or stadiamaps
 // if you want to use maptiler, set the access token in MAP_TILE_ACCESS_TOKEN

@@ -54,6 +54,7 @@ class Track:
         self.run_id = 0
         self.start_latlng = []
         self.type = "Run"
+        self.sub_type = "generic"
         self.source = ""
         self.name = ""
 
@@ -394,7 +395,8 @@ class Track:
             message["total_ascent"] if "total_ascent" in message else None
         )
         self.type = message["sport"].lower()
-
+        # 增加了个运动的子类型，要不越野跑操场跑什么的都会被写成run
+        self.sub_type = message["sub_sport"].lower()
         self.elevation_gain = (
             message["total_ascent"] if "total_ascent" in message else None
         )
@@ -479,6 +481,7 @@ class Track:
             "id": self.run_id,
             "name": (self.track_name if self.track_name else ""),  # maybe change later
             "type": self.type,
+            "sub_type": self.sub_type,
             "start_date": self.start_time.strftime("%Y-%m-%d %H:%M:%S"),
             "end": self.end_time.strftime("%Y-%m-%d %H:%M:%S"),
             "start_date_local": self.start_time_local.strftime("%Y-%m-%d %H:%M:%S"),

@@ -20,7 +20,7 @@ Base = declarative_base()
 
 GAODE_API_KEY = "4ac61695c19fe2adcb317acecb8b41ed"
 # 添加请求间隔控制（秒）
-GAODE_API_DELAY = 0.8  # 每次请求间隔1秒
+GAODE_API_DELAY = 1  # 每次请求间隔1秒
 last_request_time = 0  # 记录上次请求时间
 
 
@@ -149,7 +149,9 @@ def update_or_create_activity(session, run_activity):
     source = run_activity.source if hasattr(run_activity, "source") else "gpx"
     if run_activity.type in TYPE_DICT:
       type = TYPE_DICT[run_activity.type]
-
+    # 单独处理佳明的越野跑
+    if run_activity.type and run_activity.sub_type == 'trail':
+      type = 'Trail Run'
     current_elevation_gain = 0.0  # default value
 
     # https://github.com/stravalib/stravalib/blob/main/src/stravalib/strava_model.py#L639C1-L643C41
