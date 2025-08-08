@@ -70,6 +70,7 @@ const FULL_MARATHON_RUN_TITLE = IS_CHINESE ? '全程马拉松' : 'Full Marathon'
 const HALF_MARATHON_RUN_TITLE = IS_CHINESE ? '半程马拉松' : 'Half Marathon';
 const RUN_TITLE = IS_CHINESE ? '跑步' : 'Run';
 const TRAIL_RUN_TITLE = IS_CHINESE ? '越野跑' : 'Trail Run';
+const TRACK_RUN_TITLE = IS_CHINESE ? '操场跑' : 'Track Run';
 const SWIM_TITLE = IS_CHINESE ? '游泳' : 'Swim';
 const RIDE_TITLE = IS_CHINESE ? '骑行' : 'Ride';
 const INDOOR_RIDE_TITLE = IS_CHINESE ? '室内骑行' : 'Indoor Ride';
@@ -115,11 +116,13 @@ const RUN_TITLES = {
   ROAD_TRIP_TITLE,
   FLIGHT_TITLE,
   RUN_TREADMILL_TITLE,
+  TRACK_RUN_TITLE
 };
 
 const TYPES_MAPPING = {
   run: RUN_TITLES.RUN_TITLE,
-  'Trail Run': RUN_TITLES.TRAIL_RUN_TITLE,
+  'trail run': RUN_TITLES.TRAIL_RUN_TITLE,
+  'track run': RUN_TITLES.TRACK_RUN_TITLE,
   swim: RUN_TITLES.SWIM_TITLE,
   ride: RUN_TITLES.RIDE_TITLE,
   virtualride: RUN_TITLES.VIRTUAL_RIDE_TITLE,
@@ -181,7 +184,7 @@ const dark_vanilla = 'rgb(228,212,220)';
 const gold = 'rgb(242,190,69)';
 const purple = 'rgb(154,118,252)';
 const veryPeri = 'rgb(105,106,173)';
-const red = 'rgb(255,0,0)'; //大红色
+const red = '#E4393C'; //大红色
 
 // If your map has an offset please change this line
 // issues #92 and #198
@@ -197,8 +200,8 @@ export const ROAD_TRIP_COLOR = purple;
 export const FLIGHT_COLOR = dark_vanilla;
 export const PROVINCE_FILL_COLOR = '#47b8e0';
 export const COUNTRY_FILL_COLOR = dark_vanilla;
-export const KAYAKING_COLOR = red;
-export const SNOWBOARD_COLOR = dark_vanilla;
+export const KAYAKING_COLOR = dark_vanilla;
+export const TRACK_RUN_COLOR = red;
 export const TRAIL_RUN_COLOR = cyan;
 
 // map tiles vendor, maptiler or mapbox or stadiamaps

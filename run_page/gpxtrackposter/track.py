@@ -6,6 +6,7 @@
 # license that can be found in the LICENSE file.
 
 import datetime
+import sys
 from datetime import timezone
 import os
 from collections import namedtuple
@@ -55,7 +56,7 @@ class Track:
         self.start_latlng = []
         self.type = "Run"
         self.sub_type = "generic"
-        self.source = ""
+        self.source = os.path.basename(sys.argv[0]).split('_')[0]
         self.name = ""
 
     def load_gpx(self, file_name):
@@ -109,8 +110,8 @@ class Track:
                 os.remove(file_name)
                 return
             if (
-                messages.get("session_mesgs") is None
-                or messages.get("session_mesgs")[0].get("total_distance") is None
+                    messages.get("session_mesgs") is None
+                    or messages.get("session_mesgs")[0].get("total_distance") is None
             ):
                 print(
                     f"Session message or total distance is missing when loading FIT. for file {self.file_names[0]}, we just ignore this file and continue"
@@ -202,10 +203,10 @@ class Track:
             start_time = self.start_time
             for i in range(1, len(trackpoints)):
                 if trackpoints[i].time - trackpoints[i - 1].time <= datetime.timedelta(
-                    seconds=seconds_threshold
+                        seconds=seconds_threshold
                 ):
                     moving_time += (
-                        trackpoints[i].time.timestamp() - start_time.timestamp()
+                            trackpoints[i].time.timestamp() - start_time.timestamp()
                     )
                 start_time = trackpoints[i].time
             return int(moving_time)
@@ -447,15 +448,15 @@ class Track:
             self.polyline_container.extend(other.polyline_container)
             self.polyline_str = polyline.encode(self.polyline_container)
             self.moving_dict["average_speed"] = (
-                self.moving_dict["distance"]
-                / self.moving_dict["moving_time"].total_seconds()
+                    self.moving_dict["distance"]
+                    / self.moving_dict["moving_time"].total_seconds()
             )
             self.file_names.extend(other.file_names)
             self.special = self.special or other.special
             self.average_heartrate = self.average_heartrate or other.average_heartrate
             self.elevation_gain = (
-                self.elevation_gain if self.elevation_gain else 0
-            ) + (other.elevation_gain if other.elevation_gain else 0)
+                                      self.elevation_gain if self.elevation_gain else 0
+                                  ) + (other.elevation_gain if other.elevation_gain else 0)
         except Exception as e:
             print(
                 f"something wrong append this {self.end_time},in files {str(self.file_names)}: {e}"

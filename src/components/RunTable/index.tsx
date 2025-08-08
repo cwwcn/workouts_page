@@ -62,17 +62,29 @@ const RunTable = ({
   };
   const sortDateFuncClick =
     sortFuncInfo === 'Date' ? sortDateFunc : sortDateFuncReverse;
+  // const sortFuncMap = new Map([
+  //   ['Workout Type', sortTypeFunc],
+  //   ['KM', sortKMFunc],
+  //   ['Elevation Gain', sortElevationGainFunc],
+  //   ['Pace', sortPaceFunc],
+  //   ['BPM', sortBPMFunc],
+  //   ['Time', sortRunTimeFunc],
+  //   ['Date', sortDateFuncClick],
+  // ]);
   const sortFuncMap = new Map([
-    ['Type', sortTypeFunc],
-    ['KM', sortKMFunc],
-    ['Elevation Gain', sortElevationGainFunc],
-    ['Pace', sortPaceFunc],
-    ['BPM', sortBPMFunc],
-    ['Time', sortRunTimeFunc],
-    ['Date', sortDateFuncClick],
+    ['运动类型', sortTypeFunc],
+    ['公里数', sortKMFunc],
+    ['累计爬升', sortElevationGainFunc],
+    ['平均配速', sortPaceFunc],
+    ['平均心率', sortBPMFunc],
+    ['运动时长', sortRunTimeFunc],
+    ['运动日期', sortDateFuncClick],
   ]);
+  // if (!SHOW_ELEVATION_GAIN) {
+  //   sortFuncMap.delete('Elevation Gain');
+  // }
   if (!SHOW_ELEVATION_GAIN) {
-    sortFuncMap.delete('Elevation Gain');
+    sortFuncMap.delete('累计爬升');
   }
 
   const handleClick: React.MouseEventHandler<HTMLElement> = (e) => {

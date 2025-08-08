@@ -16,11 +16,11 @@ const getBasePath = () => {
 };
 
 const data: ISiteMetadataResult = {
-  siteTitle: '我的跑步日记',
+  siteTitle: '我的运动日记',
   siteUrl: 'https://run.chenzhuo.space',
   logo: '/images/touxiang.png',
-  description: '我的跑步日记',
-  keywords: 'workouts, running, cycling, riding, roadtrip, hiking, swimming',
+  description: '我的运动日记',
+  keywords: 'workouts, running, cycling, riding, hiking',
   navLinks: [
     {
       name: 'Summary',

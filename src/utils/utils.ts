@@ -18,7 +18,7 @@ import {
   FLIGHT_COLOR,
   RUN_COLOR,
   KAYAKING_COLOR,
-  SNOWBOARD_COLOR,
+  TRACK_RUN_COLOR,
   TRAIL_RUN_COLOR,
   RICH_TITLE,
   MAP_TILE_STYLES,
@@ -341,16 +341,16 @@ const titleForRun = (run: Activity): string => {
 
 const colorFromType = (workoutType: string): string => {
   switch (workoutType) {
-    case 'Run':
+    case '跑步':
       return RUN_COLOR;
-    case 'Trail Run':
+    case '越野跑':
       return TRAIL_RUN_COLOR;
-    case 'Ride':
+    case '骑行':
     case 'Indoor Ride':
       return RIDE_COLOR;
     case 'VirtualRide':
       return VIRTUAL_RIDE_COLOR;
-    case 'Hike':
+    case '徒步':
       return HIKE_COLOR;
     case 'Rowing':
       return ROWING_COLOR;
@@ -362,9 +362,8 @@ const colorFromType = (workoutType: string): string => {
       return FLIGHT_COLOR;
     case 'Kayaking':
       return KAYAKING_COLOR;
-    case 'Snowboard':
-    case 'Ski':
-      return SNOWBOARD_COLOR;
+    case '操场跑':
+      return TRACK_RUN_COLOR;
     default:
       return MAIN_COLOR;
   }
