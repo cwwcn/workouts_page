@@ -147,6 +147,7 @@ def update_or_create_activity(session, run_activity):
         activity = (
             session.query(Activity).filter_by(run_id=int(run_activity.id)).first()
         )
+        print(f"----- Name：{run_activity.name} -----")
         type = run_activity.type
         source = run_activity.source if hasattr(run_activity, "source") else "garmin_cn"
         if run_activity.type in TYPE_DICT:
