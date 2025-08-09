@@ -184,7 +184,6 @@ const dark_vanilla = 'rgb(228,212,220)';
 const gold = 'rgb(242,190,69)';
 const purple = 'rgb(154,118,252)';
 const veryPeri = 'rgb(105,106,173)';
-const red = '#E4393C'; //大红色
 
 // If your map has an offset please change this line
 // issues #92 and #198
@@ -201,7 +200,7 @@ export const FLIGHT_COLOR = dark_vanilla;
 export const PROVINCE_FILL_COLOR = '#47b8e0';
 export const COUNTRY_FILL_COLOR = dark_vanilla;
 export const KAYAKING_COLOR = dark_vanilla;
-export const TRACK_RUN_COLOR = red;
+export const TRACK_RUN_COLOR = purple;
 export const TRAIL_RUN_COLOR = cyan;
 
 // map tiles vendor, maptiler or mapbox or stadiamaps
