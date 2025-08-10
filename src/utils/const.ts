@@ -208,7 +208,7 @@ export const TRAIL_RUN_COLOR = cyan;
 export const MAP_TILE_VENDOR = 'mapbox';
 
 // map tiles style name, see MAP_TILE_STYLES for more details
-export const MAP_TILE_STYLE = 'dark-v10';
+export const MAP_TILE_STYLE = 'dark-v11';
 
 // access token. you can apply a new one, it's free.
 // maptiler: Gt5R0jT8tuIYxW6sNrAg | sign up at https://cloud.maptiler.com/auth/widget
@@ -242,5 +242,5 @@ export const MAP_TILE_STYLES = {
     'dark-v11': 'mapbox://styles/mapbox/dark-v11',
     'navigation-night': 'mapbox://styles/mapbox/navigation-night-v1',
   },
-  default: 'mapbox://styles/mapbox/dark-v10',
+  default: 'mapbox://styles/mapbox/dark-v11',
 };

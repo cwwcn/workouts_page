@@ -236,10 +236,11 @@ const geoJsonForRuns = (runs: Activity[]): FeatureCollection<LineString> => ({
   type: 'FeatureCollection',
   features: runs.map((run) => {
     const points = pathForRun(run);
-
+    // alert(run.type)
     return {
       type: 'Feature',
       properties: {
+        // 这里是控制地图划线颜色的代码，直接用run.type返回的是Run Trail Run之类的，我改过显示为跑步 越野跑什么的，所以这里也要做一下修改
         color: colorFromType(run.type),
       },
       geometry: {
@@ -342,15 +343,19 @@ const titleForRun = (run: Activity): string => {
 const colorFromType = (workoutType: string): string => {
   switch (workoutType) {
     case '跑步':
+    case 'Run':
       return RUN_COLOR;
     case '越野跑':
+    case 'Trail Run':
       return TRAIL_RUN_COLOR;
     case '骑行':
+    case 'Ride':
     case 'Indoor Ride':
       return RIDE_COLOR;
     case 'VirtualRide':
       return VIRTUAL_RIDE_COLOR;
     case '徒步':
+    case 'Hike':
       return HIKE_COLOR;
     case 'Rowing':
       return ROWING_COLOR;
@@ -363,6 +368,7 @@ const colorFromType = (workoutType: string): string => {
     case 'Kayaking':
       return KAYAKING_COLOR;
     case '操场跑':
+    case 'Track Run':
       return TRACK_RUN_COLOR;
     default:
       return MAIN_COLOR;
