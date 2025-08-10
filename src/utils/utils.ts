@@ -414,6 +414,8 @@ const getBoundsForGeoData = (
   if (features.length > 1) {
     zoom = 11.5;
   }
+  // 增加默认缩放级别使地图更大可以使用以下代码，或者 zoom += 2; 放大更多
+  zoom -= 0.25;
   return { longitude, latitude, zoom };
 };
 

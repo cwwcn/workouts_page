@@ -33,7 +33,7 @@ const GOOGLE_ANALYTICS_TRACKING_ID = '';
 // styling: set to `true` if you want dash-line route
 const USE_DASH_LINE = false;
 // styling: route line opacity: [0, 1]
-const LINE_OPACITY = 0.8;
+const LINE_OPACITY = 1;
 // styling: map height
 const MAP_HEIGHT = 626;
 //set to `false` if you want to hide the road label characters
@@ -116,7 +116,7 @@ const RUN_TITLES = {
   ROAD_TRIP_TITLE,
   FLIGHT_TITLE,
   RUN_TREADMILL_TITLE,
-  TRACK_RUN_TITLE
+  TRACK_RUN_TITLE,
 };
 
 const TYPES_MAPPING = {
@@ -241,6 +241,8 @@ export const MAP_TILE_STYLES = {
     'dark-v10': 'mapbox://styles/mapbox/dark-v10',
     'dark-v11': 'mapbox://styles/mapbox/dark-v11',
     'navigation-night': 'mapbox://styles/mapbox/navigation-night-v1',
+    'light-v11': 'mapbox://styles/mapbox/light-v11',
+    'navigation-day': 'mapbox://styles/mapbox/navigation-day-v1',
   },
   default: 'mapbox://styles/mapbox/dark-v11',
 };

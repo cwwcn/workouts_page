@@ -29,7 +29,7 @@ env:
   ATHLETE: Chenww
   TITLE: Chenww Running
   MIN_GRID_DISTANCE: 5.0 # change min distance here
-  TITLE_GRID: Chenww Over 5km Running # also here
+  TITLE_GRID: Chenww Over 5km Runs # also here
 
   # IGNORE_BEFORE_SAVING: True # if you want to ignore some data before saving, set this to True
   IGNORE_START_END_RANGE: 0 # Unit meter
