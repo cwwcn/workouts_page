@@ -1,65 +1,81 @@
 @media only screen and (max-width: 800px) {
-  /* 当屏幕宽度小于 800px 时 */
-  .runTable th:nth-child(3),
-  .runTable td:nth-child(3) {
-    display: none;
-    /* 隐藏第3列 */
-  }
+    /* 当屏幕宽度小于 800px 时 */
+    .runTable th:nth-child(3),
+    .runTable td:nth-child(3) {
+        display: none;
+        /* 隐藏第3列 */
+    }
 }
 
 @media only screen and (max-width: 700px) {
-  /* 当屏幕宽度小于 700px 时 */
-  .runTable th:nth-child(5),
-  .runTable td:nth-child(5) {
-    display: none;
-    /* 隐藏第5列 */
-  }
+    /* 当屏幕宽度小于 700px 时 */
+    .runTable th:nth-child(5),
+    .runTable td:nth-child(5) {
+        display: none;
+        /* 隐藏第5列 */
+    }
 }
 
 .runTable {
-  width: 100%;
-  font-variant: tabular-nums;
-  margin: 2rem 0 5rem 0;
-  color: rgb(204, 204, 204);
-  background-color: rgb(26, 26, 26);
-
-  :is(thead) {
+    width: 100%;
+    font-variant: tabular-nums;
+    margin: 0.5rem 0 2rem 0;
     color: rgb(204, 204, 204);
-    text-align: right;
+    background-color: rgb(26, 26, 26);
 
-    :is(th) {
-      padding: 0.5rem;
+    :is(thead) {
+        color: rgb(204, 204, 204);
+        text-align: right;
+
+        :is(th) {
+            padding: 0.5rem;
+        }
     }
-  }
 }
 
 .runRow {
-  cursor: pointer;
-  :is(td) {
-    padding: 0.5rem;
-    border: 0;
-    text-align: right;
+    cursor: pointer;
 
-    &:first-child {
-      text-align: left;
-      min-width: 100px;
+    :is(td) {
+        padding: 0.5rem;
+        border: 0;
+        text-align: right;
+
+        &:first-child {
+            text-align: left;
+            min-width: 100px;
+        }
     }
-  }
 
-  &:hover {
-    background-color: lighten(rgb(26, 26, 26), 3%);
-  }
+    &:hover {
+        background-color: lighten(rgb(26, 26, 26), 3%);
+    }
 }
 
 .selected {
-  color: red !important;
+    color: red !important;
 }
 
 .tableContainer {
-  width: 100%;
-  overflow-x: auto;
+    width: 100%;
+    overflow-x: auto;
 }
 
 .runDate {
-  color: rgb(204, 204, 204);
+    color: rgb(204, 204, 204);
+}
+
+.maxRunRecord {
+    /*border: 1px solid yellow;*/
+    background-color: rgba(255, 235, 4, 0.26);
+}
+
+.maxTrailRecord {
+    /*border: 1px solid rgb(112,243,255);*/
+    background-color: rgba(29, 161, 242, 0.26);
+}
+
+.maxTrackRecord {
+    /*border: 1px solid rgb(112,243,255);*/
+    background-color: rgba(228,212,220, 0.26);
 }

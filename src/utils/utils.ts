@@ -343,6 +343,7 @@ const titleForRun = (run: Activity): string => {
 const colorFromType = (workoutType: string): string => {
   switch (workoutType) {
     case '跑步':
+    case '路跑':
     case 'Run':
       return RUN_COLOR;
     case '越野跑':

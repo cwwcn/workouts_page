@@ -15,22 +15,25 @@ interface IRunRowProperties {
   run: Activity;
   runIndex: number;
   setRunIndex: (_ndex: number) => void;
+  maxRunRecord: boolean;
+  maxTrailRecord: boolean;
+  maxTrackRecord: boolean;
 }
 
 // 在 import 语句下方添加
 const typeMapping: { [key: string]: string } = {
-    'Hike': '徒步',
-    'Ride': '骑行',
-    'VirtualRide': '虚拟骑行',
-    'Rowing': '划船',
-    'Run': '跑步',
-    'Trail Run': '越野跑',
-    'Swim': '游泳',
-    'RoadTrip': '公路旅行',
-    'Kayaking': '皮划艇',
-    'Snowboard': '滑雪',
-    'Ski': '滑板',
-    'Track Run': '操场跑'
+  Hike: '徒步',
+  Ride: '骑行',
+  VirtualRide: '虚拟骑行',
+  Rowing: '划船',
+  Run: '路跑',
+  'Trail Run': '越野跑',
+  Swim: '游泳',
+  RoadTrip: '公路旅行',
+  Kayaking: '皮划艇',
+  Snowboard: '滑雪',
+  Ski: '滑板',
+  'Track Run': '操场跑',
 };
 
 const RunRow = ({
@@ -39,6 +42,9 @@ const RunRow = ({
   run,
   runIndex,
   setRunIndex,
+  maxRunRecord,
+  maxTrailRecord,
+  maxTrackRecord,
 }: IRunRowProperties) => {
   const distance = (run.distance / 1000.0).toFixed(2) + 'km';
   const elevation_gain = run.elevation_gain?.toFixed(0) + 'm';
@@ -60,7 +66,7 @@ const RunRow = ({
 
   return (
     <tr
-      className={`${styles.runRow} ${runIndex === elementIndex ? styles.selected : ''}`}
+      className={`${styles.runRow} ${runIndex === elementIndex ? styles.selected : ''} ${maxRunRecord ? styles.maxRunRecord : ''} ${maxTrailRecord ? styles.maxTrailRecord : ''} ${maxTrackRecord ? styles.maxTrackRecord : ''}`}
       key={run.start_date_local}
       onClick={handleClick}
       style={{ color: colorFromType(type) }}
@@ -72,7 +78,8 @@ const RunRow = ({
       <td>{paceParts}</td>
       <td>{heartRate && heartRate.toFixed(0) + 'bpm'}</td>
       <td>{runTime}</td>
-      <td className={styles.runDate}>{run.start_date_local}</td>
+      {/*如果说是想保持日期列和运动颜色统一，就删除掉className={styles.runDate}就行了，想之前的展示td里边加上去就行了*/}
+      <td>{run.start_date_local}</td>
     </tr>
   );
 };

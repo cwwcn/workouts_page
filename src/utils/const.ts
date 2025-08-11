@@ -174,7 +174,6 @@ export {
 };
 
 // eslint-disable-next-line no-unused-vars
-const nike = 'rgb(224,237,94)';
 const yellow = 'rgb(224,237,94)';
 const green = 'rgb(0,237,94)';
 const pink = 'rgb(237,85,219)';
@@ -200,7 +199,7 @@ export const FLIGHT_COLOR = dark_vanilla;
 export const PROVINCE_FILL_COLOR = '#47b8e0';
 export const COUNTRY_FILL_COLOR = dark_vanilla;
 export const KAYAKING_COLOR = dark_vanilla;
-export const TRACK_RUN_COLOR = purple;
+export const TRACK_RUN_COLOR = dark_vanilla;
 export const TRAIL_RUN_COLOR = cyan;
 
 // map tiles vendor, maptiler or mapbox or stadiamaps
