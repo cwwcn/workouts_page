@@ -3,10 +3,12 @@ import useSiteMetadata from '@/hooks/useSiteMetadata';
 
 const Header = () => {
   const { logo, siteUrl, navLinks } = useSiteMetadata();
+  // 过滤掉 "Summary" 链接
+  const filteredNavLinks = navLinks.filter(link => link.name !== 'Summary');
 
   return (
     <>
-      <nav className="mt-12 flex w-full items-center justify-between pl-6 lg:px-16">
+      <nav className="mt-12 flex w-full items-end justify-between pl-6 lg:px-16">
         <div className="w-1/4">
           <Link to={siteUrl}>
             <picture>
@@ -15,7 +17,7 @@ const Header = () => {
           </Link>
         </div>
         <div className="w-3/4 text-right">
-          {navLinks.map((n, i) => (
+          {filteredNavLinks.map((n, i) => (
             <a
               key={i}
               href={n.url}

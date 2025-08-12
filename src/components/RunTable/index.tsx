@@ -18,6 +18,7 @@ interface IRunTableProperties {
   setActivity: (_runs: Activity[]) => void;
   runIndex: number;
   setRunIndex: (_index: number) => void;
+  year: string; // 添加年份属性
 }
 
 type SortFunc = (_a: Activity, _b: Activity) => number;
@@ -28,6 +29,7 @@ const RunTable = ({
   setActivity,
   runIndex,
   setRunIndex,
+  year, // 解构年份属性
 }: IRunTableProperties) => {
   // 跑步
   let run_speed = 0;
@@ -63,6 +65,9 @@ const RunTable = ({
   const pbtrailpaceParts = max_trail?.average_speed
     ? formatPace(max_trail.average_speed)
     : null;
+
+    // 根据传入的年份确定显示内容
+  const displayYear = year === 'Total' ? '历年' : `${year}年`;
 
   const [sortFuncInfo, setSortFuncInfo] = useState('');
   // TODO refactor?
@@ -134,7 +139,7 @@ const RunTable = ({
 
   return (
     <div className={styles.tableContainer}>
-      <div className={styles.runDate}>本年度最佳记录：</div>
+      <div className={styles.runDate}>{displayYear}度最佳记录：</div>
       {max_run ? (
         <div className={styles.runDate}>
           跑步：(时间：{max_run.start_date_local.split(' ')[0]}，配速：
@@ -167,9 +172,13 @@ const RunTable = ({
               run={run}
               runIndex={runIndex}
               setRunIndex={setRunIndex}
-              maxRunRecord={max_run?.run_id === run.run_id && max_run?.type === 'Run'}
+              maxRunRecord={
+                max_run?.run_id === run.run_id && max_run?.type === 'Run'
+              }
               maxTrailRecord={max_trail?.run_id === run.run_id}
-              maxTrackRecord={max_run?.run_id === run.run_id && max_run?.type === 'Track Run'}
+              maxTrackRecord={
+                max_run?.run_id === run.run_id && max_run?.type === 'Track Run'
+              }
             />
           ))}
         </tbody>
