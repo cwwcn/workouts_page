@@ -5,7 +5,8 @@
 on:
   workflow_dispatch:
   schedule:
-    - cron: '18 1,13 * * *'
+    - cron: '25 1 * * *'
+    - cron: '40 13 * * *'
   push:
     branches:
       - main
@@ -29,7 +30,7 @@ env:
   # please change to your own config.
   RUN_TYPE: garmin_cn # support strava/nike/garmin/coros/garmin_cn/garmin_sync_cn_global/keep/only_gpx/only_fit/nike_to_strava/strava_to_garmin/tcx_to_garmin/strava_to_garmin_cn/garmin_to_strava/garmin_to_strava_cn/codoon/oppo/db_updater, Please change the 'pass' it to your own
   ATHLETE: Chenww
-  TITLE: Chenww Running
+  TITLE: Chenww Runs
   MIN_GRID_DISTANCE: 5.0 # change min distance here
   TITLE_GRID: Chenww Over 5km Runs # also here
 
