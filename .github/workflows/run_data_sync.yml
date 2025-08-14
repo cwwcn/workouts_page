@@ -1,12 +1,11 @@
 ﻿name: Run Data Sync
 
-# 中国时间 8:40 和 21:40 对应 UTC 时间 0:40 和 13:40
+# 中国时间 早九点 和 晚九点 对应 UTC 时间 1:00 和 13:00
 # 中国时间比UTC时间快8个小时，Github Action是UTC时间运行的
 on:
   workflow_dispatch:
   schedule:
-    - cron: '25 1 * * *'
-    - cron: '40 13 * * *'
+    - cron: '50 1 * * *'
   push:
     branches:
       - main
