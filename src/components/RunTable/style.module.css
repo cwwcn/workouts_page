@@ -65,6 +65,7 @@
     color: rgb(204, 204, 204);
 }
 
+/*针对最好记录的背景颜色显示*/
 .maxRunRecord {
     /*border: 1px solid yellow;*/
     background-color: rgba(255, 235, 4, 0.26);
@@ -77,5 +78,21 @@
 
 .maxTrackRecord {
     /*border: 1px solid rgb(112,243,255);*/
-    background-color: rgba(228,212,220, 0.26);
+    background-color: rgba(228, 212, 220, 0.26);
 }
+
+/* 为最佳记录行添加圆角效果 */
+.maxRunRecord td:first-child,
+.maxTrailRecord td:first-child,
+.maxTrackRecord td:first-child {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.maxRunRecord td:last-child,
+.maxTrailRecord td:last-child,
+.maxTrackRecord td:last-child {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
