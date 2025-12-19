@@ -314,12 +314,63 @@ const typeForRun = (run: Activity): string => {
   }
 };
 
+const typeMapping: { [key: string]: string } = {
+  Hike: '徒步',
+  Ride: '骑行',
+  VirtualRide: '虚拟骑行',
+  Rowing: '划船',
+  Run: '路跑',
+  'Trail Run': '越野跑',
+  Swim: '游泳',
+  RoadTrip: '公路旅行',
+  Kayaking: '皮划艇',
+  Snowboard: '滑雪',
+  Ski: '滑板',
+  'Track Run': '操场跑',
+};
+
 const titleForRun = (run: Activity): string => {
   const type = run.type;
   if (RICH_TITLE) {
     // 1. try to use user defined name
     if (run.name != '') {
-      return run.name;
+      // 1. 获取运动类型中文名称，复用 RunRow.tsx 中的 typeMapping
+      const typeCN = typeMapping[run.type] || run.type;
+      let typeshow = '🏃‍♂️🏃‍♂️🏃‍♂️';
+      if (typeCN == '越野跑') {
+        typeshow = '⛰️';
+      }
+      if (typeCN == '操场跑') {
+        typeshow = '🏟️';
+      }
+
+      // 2. 获取星期几（英文）
+      const weekdays = [
+        'Sunday',
+        'Monday',
+        'Tuesday',
+        'Wednesday',
+        'Thursday',
+        'Friday',
+        'Saturday',
+      ];
+      const weekday = weekdays[new Date(run.start_date_local).getDay()];
+
+      // 3. 计算配速，使用现有的 formatPace 函数
+      const pace = run.average_speed
+        ? formatPace(run.average_speed) + '/km'
+        : null;
+
+      // 4. 获取心率
+      const heartRate = run.average_heartrate
+        ? Math.round(run.average_heartrate) + 'bpm'
+        : null;
+
+      // 5. 获取距离（保留一位小数）
+      const distance = (run.distance / 1000.0).toFixed(2) + 'km';
+
+      return `${typeshow}-${weekday}-${pace}-${heartRate}-${distance}`;
+      // return run.name;
     }
     // 2. try to use location+type if the location is available, eg. 'Shanghai Run'
     const { city } = locationForRun(run);
