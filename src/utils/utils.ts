@@ -336,7 +336,7 @@ const titleForRun = (run: Activity): string => {
     if (run.name != '') {
       // 1. 获取运动类型中文名称，复用 RunRow.tsx 中的 typeMapping
       const typeCN = typeMapping[run.type] || run.type;
-      let typeshow = '🏃‍♂️🏃‍♂️🏃‍♂️';
+      let typeshow = '🏃‍♂️';
       if (typeCN == '越野跑') {
         typeshow = '⛰️';
       }
