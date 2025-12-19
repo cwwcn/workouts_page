@@ -155,7 +155,7 @@ const RunTable = ({
       <table className={styles.runTable} cellSpacing="0" cellPadding="0">
         <thead>
           <tr>
-            <th>运动标题</th>
+            <th className={styles.thCentered}>运动标题</th>
             {Array.from(sortFuncMap.keys()).map((k) => (
               <th key={k} onClick={handleClick}>
                 {k}
