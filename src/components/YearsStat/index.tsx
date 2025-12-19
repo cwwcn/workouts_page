@@ -27,7 +27,11 @@ const YearsStat = ({
           <br />
         </p>
         <br />
-        <p>哎！三天打鱼两天晒网，又菜又爱玩！</p>
+        <p>
+          "明明这么痛苦，这么难过，为什么就是不能放弃跑步？因为全身细胞都在蠢蠢欲动，想要感受强风迎面吹拂的滋味。"
+        </p>
+        <br />
+        <p style={quoteStyle}>&ndash;&ndash;《强风吹拂》</p>
       </section>
       <hr color="red" />
       {yearsArrayUpdate.map((year) => (
@@ -53,6 +57,11 @@ const YearsStat = ({
       }
     </div>
   );
+};
+
+const quoteStyle = {
+  fontWeight: 'bold',
+  textAlign: 'right',
 };
 
 export default YearsStat;
