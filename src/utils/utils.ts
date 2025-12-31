@@ -334,7 +334,7 @@ const titleForRun = (run: Activity): string => {
   if (RICH_TITLE) {
     // 1. try to use user defined name
     if (run.name != '') {
-      if (run.name == '郑州市 跑步') {
+      if (run.name.includes('市 跑步')) {
         // 1. 获取运动类型中文名称，复用 RunRow.tsx 中的 typeMapping
         const typeCN = typeMapping[run.type] || run.type;
         let typeshow = '🏃‍♂️';
