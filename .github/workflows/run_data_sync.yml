@@ -31,6 +31,8 @@ env:
   TITLE: Chenww Runs
   MIN_GRID_DISTANCE: 10.0 # change min distance here
   TITLE_GRID: Chenww Over 10km Runs # also here
+  LOGFIRE_SEND_TO_LOGFIRE: "false"
+  LOGFIRE_TOKEN: ""
 
   # IGNORE_BEFORE_SAVING: True # if you want to ignore some data before saving, set this to True
   IGNORE_START_END_RANGE: 0 # Unit meter
